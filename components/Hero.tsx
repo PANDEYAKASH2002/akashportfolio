@@ -945,6 +945,29 @@ function Stage({ stackImage }: HeroProps) {
   );
 }
 
+function CtaButtons({ className = "" }: { className?: string }) {
+  return (
+    <div className={`flex-wrap items-center gap-3 ${className}`}>
+      <button
+        onClick={() => scrollToSection("projects")}
+        className="group flex items-center gap-5 rounded-full bg-[#0A0A0A] py-2 pl-7 pr-2 text-sm font-medium text-white transition-colors hover:bg-[#C8641F]"
+      >
+        View My Work
+        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-black">
+          <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+        </span>
+      </button>
+
+      <button
+        onClick={() => scrollToSection("contact")}
+        className="flex items-center gap-3 rounded-full border border-black/10 bg-white/30 px-7 py-3.5 text-sm text-black/80 transition-colors hover:border-black/40"
+      >
+        Let&apos;s Talk <ArrowUpRight className="h-3.5 w-3.5" />
+      </button>
+    </div>
+  );
+}
+
 /* ------------------------------------- Hero ------------------------------------ */
 
 export default function Hero({ stackImage }: HeroProps) {
@@ -1006,30 +1029,10 @@ export default function Hero({ stackImage }: HeroProps) {
             </span>
           </h1>
 
-          <p className="mt-8 max-w-[26rem] text-[15px] leading-7 text-black/55">
-            Frontend expertise + real backend engineering + production
-            experience. I build scalable web applications using React, Node.js,
-            databases and modern cloud infrastructure.
-          </p>
+          {/* Paragraph removed: hidden on mobile/small devices (and it was never shown on desktop) */}
 
-          <div className="mt-10 flex flex-wrap items-center gap-3">
-            <button
-              onClick={() => scrollToSection("projects")}
-              className="group flex items-center gap-5 rounded-full bg-[#0A0A0A] py-2 pl-7 pr-2 text-sm font-medium text-white transition-colors hover:bg-[#C8641F]"
-            >
-              View My Work
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-black">
-                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </span>
-            </button>
-
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="flex items-center gap-3 rounded-full border border-black/10 bg-white/30 px-7 py-3.5 text-sm text-black/80 transition-colors hover:border-black/40"
-            >
-              Let&apos;s Talk <ArrowUpRight className="h-3.5 w-3.5" />
-            </button>
-          </div>
+          {/* Buttons: desktop only (original position) */}
+          <CtaButtons className="mt-10 hidden lg:flex" />
 
           <ul className="mt-14 flex flex-wrap gap-x-8 gap-y-5">
             {TECH.map(({ name, Icon }) => (
@@ -1056,6 +1059,9 @@ export default function Hero({ stackImage }: HeroProps) {
           className="relative min-w-0"
         >
           <Stage stackImage={stackImage} />
+
+          {/* Buttons: mobile / small devices, below the stacked image */}
+          <CtaButtons className="mt-6 flex lg:hidden" />
         </motion.div>
       </div>
 
