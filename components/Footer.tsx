@@ -41,32 +41,32 @@ export default function Footer() {
   const socialLinks = [
     {
       label: "GitHub",
-      href: "https://github.com/yourusername",
+      href: "https://github.com/PANDEYAKASH2002",
       icon: FaGithub,
     },
     {
       label: "LinkedIn",
-      href: "https://linkedin.com/in/yourusername",
+      href: "https://www.linkedin.com/flagship-web/in/akash-%F0%9F%8C%B1-pandey-6960842b1/",
       icon: FaLinkedin,
     },
-    {
-      label: "Naukri",
-      href: "https://www.naukri.com/mnjuser/profile",
-      icon: NaukriIcon,
-    },
+    // {
+    //   label: "Naukri",
+    //   href: "https://www.naukri.com/mnjuser/profile",
+    //   icon: NaukriIcon,
+    // },
     {
       label: "Instagram",
-      href: "https://instagram.com/yourusername",
+      href: "https://instagram.com/aakash.0.0.7",
       icon: FaInstagram,
     },
-    {
-      label: "Facebook",
-      href: "https://facebook.com/yourusername",
-      icon: FaFacebook,
-    },
+    // {
+    //   label: "Facebook",
+    //   href: "https://facebook.com/yourusername",
+    //   icon: FaFacebook,
+    // },
     {
       label: "WhatsApp",
-      href: "https://wa.me/919999999999", // country code + number, no symbols
+      href: "https://wa.me/918957447491", // country code + number, no symbols
       icon: FaWhatsapp,
     },
   ];
